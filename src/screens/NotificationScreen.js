@@ -1,19 +1,19 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {COLORS} from '../constants/Theme';
-const AboutScreen = () => {
+
+const NotificationScreen = () => {
   return (
     <View style={styles.conatiner}>
-      <Text style={styles.text}>AboutScreen</Text>
+      <Text style={styles.text}>NotificationScreen</Text>
     </View>
   );
 };
 
-export default AboutScreen;
+export default NotificationScreen;
 
 const styles = StyleSheet.create({
   conatiner: {
-    backgroundColor: COLORS.lightBlack,
+    backgroundColor: 'black',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
