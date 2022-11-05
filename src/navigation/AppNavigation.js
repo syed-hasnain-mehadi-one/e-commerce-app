@@ -2,12 +2,19 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {Image, StyleSheet} from 'react-native';
-import aboutIcon from '../assets/icons/about.png';
+
+//icons
+import bellIcon from '../assets/icons/bell.png';
+import cartIcon from '../assets/icons/cart.png';
 import homeIcon from '../assets/icons/home.png';
 import uploadIcon from '../assets/icons/upload.png';
+import aboutIcon from '../assets/icons/user.png';
 
+//screens
 import AboutScreen from '../screens/AboutScreen';
+import Cart from '../screens/CartScreen';
 import HomeScreen from '../screens/HomeScreen';
+import Notification from '../screens/NotificationScreen';
 import UploadScreen from '../screens/UploadScreen';
 
 const Tab = createBottomTabNavigator();
@@ -41,6 +48,27 @@ const AppNavigation = () => {
         />
         <Tab.Screen
           name="About"
+          component={Cart}
+          options={{
+            title: 'About',
+            tabBarIcon: () => {
+              return <Image style={styles.image} source={cartIcon} />;
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Notification"
+          component={Notification}
+          options={{
+            title: 'Notification',
+            tabBarIcon: () => {
+              return <Image style={styles.image} source={bellIcon} />;
+            },
+          }}
+        />
+
+        <Tab.Screen
+          name="Cart"
           component={AboutScreen}
           options={{
             title: 'About',
@@ -58,7 +86,7 @@ export default AppNavigation;
 
 const styles = StyleSheet.create({
   image: {
-    height: 15,
-    width: 15,
+    height: 18,
+    width: 18,
   },
 });
